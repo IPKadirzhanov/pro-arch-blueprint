@@ -59,11 +59,13 @@ export default function Header({ onOpenChat }: { onOpenChat: () => void }) {
           backdropFilter: scrolled ? 'blur(32px) saturate(170%)' : 'blur(18px) saturate(160%)',
           WebkitBackdropFilter: scrolled ? 'blur(32px) saturate(170%)' : 'blur(18px) saturate(160%)',
           background: scrolled
-            ? 'linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08))'
+            ? 'linear-gradient(135deg, rgba(15,23,42,0.85), rgba(15,23,42,0.75))'
             : 'linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04))',
-          border: '1px solid rgba(255,255,255,0.18)',
-          boxShadow: `inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(255,255,255,0.08), 0 10px 40px rgba(0,0,0,0.25)`,
-          opacity: scrolled ? 1 : 0.92,
+          border: scrolled ? '1px solid rgba(15,23,42,0.2)' : '1px solid rgba(255,255,255,0.18)',
+          boxShadow: scrolled
+            ? '0 10px 40px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.1)'
+            : 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(255,255,255,0.08), 0 10px 40px rgba(0,0,0,0.25)',
+          opacity: 1,
           transitionDuration: '500ms',
           transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
           padding: scrolled ? '0 24px' : '0 28px',
