@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { to: '/', label: 'Главная' },
-  { to: '/services', label: 'Архитектурные решения' },
-  { to: '/projects', label: 'Реализованные проекты' },
-  { to: '/catalogs', label: 'Каталоги и материалы' },
-  { to: '/course-gip', label: 'Авторский курс ГИП' },
   { to: '/about', label: 'О компании' },
+  { to: '/services', label: 'Услуги' },
+  { to: '/projects', label: 'Проекты' },
+  { to: '/catalogs', label: 'Отзывы' },
   { to: '/contacts', label: 'Контакты' },
+  { to: '/course-gip', label: 'Курс' },
 ];
 
 export default function Header({ onOpenChat }: { onOpenChat: () => void }) {
