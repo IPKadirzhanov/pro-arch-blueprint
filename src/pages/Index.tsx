@@ -118,6 +118,29 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ═══════════ MARQUEE ═══════════ */}
+      <div
+        className="relative z-20 -mt-[30px] -mb-[30px] overflow-hidden"
+        style={{
+          background: 'rgba(10, 18, 36, 0.75)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        }}
+      >
+        <div className="flex animate-marquee whitespace-nowrap py-4">
+          {[0, 1].map((i) => (
+            <div key={i} className="flex items-center gap-8 px-4">
+              {['Архитектурное проектирование', 'Конструктивные решения', 'Авторский надзор', 'BIM-технологии', 'Инженерные сети', 'Генеральный план', 'Дизайн интерьеров', 'Экспертиза проектов'].map((text) => (
+                <span key={text} className="flex items-center gap-8">
+                  <span className="text-white text-[13px] uppercase tracking-[0.25em] font-medium">{text}</span>
+                  <span className="text-white/30 text-lg">•</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* ═══════════ PROJECTS ═══════════ */}
       <section className="relative py-[140px] sm:py-[180px]">
         <BlueprintOverlay />
