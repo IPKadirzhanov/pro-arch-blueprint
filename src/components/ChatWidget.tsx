@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, ArrowRight } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -114,7 +115,9 @@ export default function ChatWidget({ isOpen, onToggle }: { isOpen: boolean; onTo
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[80%] px-3 py-2 rounded-lg text-sm leading-relaxed ${m.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground'}`}>
-                    {m.content}
+                    <div className={`prose prose-sm max-w-none [&>p]:m-0 ${m.role === 'user' ? 'prose-invert' : ''}`}>
+                      <ReactMarkdown>{m.content}</ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               ))}
